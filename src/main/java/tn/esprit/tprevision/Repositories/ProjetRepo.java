@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.tprevision.Entities.Projet;
 
 @Repository
-public interface ProjetRepo extends JpaRepository<Projet,Integer> {
+public interface ProjetRepo extends JpaRepository<Projet,Long> {
 }

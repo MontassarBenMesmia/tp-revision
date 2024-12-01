@@ -25,7 +25,7 @@ public class EquipeController {
 
     // Get a specific Equipe by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Equipe> getEquipeById(@PathVariable Integer id) {
+    public ResponseEntity<Equipe> getEquipeById(@PathVariable Long id) {
         Optional<Equipe> equipe = equipeService.getEquipeById(id);
         return equipe.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -39,7 +39,7 @@ public class EquipeController {
 
     // Update an existing Equipe
     @PutMapping("/{id}")
-    public ResponseEntity<Equipe> updateEquipe(@PathVariable Integer id, @RequestBody Equipe equipe) {
+    public ResponseEntity<Equipe> updateEquipe(@PathVariable Long id, @RequestBody Equipe equipe) {
         Optional<Equipe> existingEquipe = equipeService.getEquipeById(id);
         if (existingEquipe.isPresent()) {
             equipe.setId(id); // Ensure the ID is set for update
@@ -52,7 +52,7 @@ public class EquipeController {
 
     // Delete an Equipe by ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteEquipe(@PathVariable Integer id) {
+    public ResponseEntity<Void> deleteEquipe(@PathVariable Long id) {
         Optional<Equipe> equipe = equipeService.getEquipeById(id);
         if (equipe.isPresent()) {
             equipeService.deleteEquipe(id);

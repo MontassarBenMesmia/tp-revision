@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import tn.esprit.tprevision.Entities.Equipe;
 
 @Repository
-public interface EquipeRepo extends JpaRepository <Equipe,Integer> {
+public interface EquipeRepo extends JpaRepository <Equipe,Long> {
 }

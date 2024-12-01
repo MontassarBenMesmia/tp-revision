@@ -1,8 +1,11 @@
 package tn.esprit.tprevision.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+import org.apache.commons.lang3.builder.ToStringExclude;
 
 import java.util.List;
 
@@ -13,12 +16,14 @@ import java.util.List;
 public class Projet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String sujet;
 
     @ManyToMany(mappedBy = "projets")
+    @ToString.Exclude
+    @JsonIgnore
     private List<Equipe> Equipes;
 
-    @OneToOne(mappedBy = "projet")
+    @OneToOne(cascade = CascadeType.ALL)
     private ProjetDetail projetDetail;
 }

@@ -8,15 +8,28 @@ import java.util.Optional;
 public interface IProjetService {
 
     // Get all Projets
-    List<Projet> getAllProjets();
+    public List<Projet> getAllProjets();
 
     // Get a Projet by ID
-    Optional<Projet> getProjetById(Integer id);
+    public Optional<Projet> getProjetById(Integer id);
 
     // Create or Update a Projet
-    Projet saveOrUpdateProjet(Projet projet);
+    public Projet saveOrUpdateProjet(Projet projet);
 
     // Delete a Projet by ID
-    void deleteProjet(Integer id);
+    public void deleteProjet(Long id);
+
+    public Projet addProjetAndProjetDetailAndAssign(Projet projet);
+
+    public void assignProjetDetailToProjet(Long projetId, Long projetDetailId);
+
+    public void assignProjetToEquipe(Long projetId, Long equipeId);
+
+    public Projet ajouterProjetEtAffecterProjetDetail(Projet projet, Long projetDetailId);
+
+    public Projet DesaffecterProjetDetailDeProjet(Long projetId);
+    public void desaffecterProjetDeEquipe(Long projetId, Long equipeId);
+
+
 }
 

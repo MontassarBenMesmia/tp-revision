@@ -13,13 +13,13 @@ import java.util.List;
 public class Equipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String nom;
 
     @Enumerated(EnumType.STRING)
     private Domaine domaine;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Projet> projets;
 }
 

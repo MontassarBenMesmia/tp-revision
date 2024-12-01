@@ -20,7 +20,7 @@ public class EquipeService {
     }
 
     // Get a specific Equipe by ID
-    public Optional<Equipe> getEquipeById(Integer id) {
+    public Optional<Equipe> getEquipeById(Long id) {
         return equipeRepo.findById(id);
     }
 
@@ -30,7 +30,7 @@ public class EquipeService {
     }
 
     // Delete an Equipe by ID
-    public void deleteEquipe(Integer id) {
+    public void deleteEquipe(Long id) {
         equipeRepo.deleteById(id);
     }
 }

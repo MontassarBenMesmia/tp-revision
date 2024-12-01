@@ -1,8 +1,10 @@
 package tn.esprit.tprevision.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Date;
 
@@ -18,8 +20,11 @@ public class ProjetDetail {
     private String description;
     private String technologie;
     private Long cout;
+    @Temporal(TemporalType.DATE)
     private Date dateDebut;
 
-    @OneToOne
+    @OneToOne(mappedBy = "projetDetail")
+    @ToString.Exclude
+    @JsonIgnore
     private Projet projet;
 }

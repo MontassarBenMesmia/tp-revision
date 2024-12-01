@@ -14,5 +14,5 @@ public interface IEquipeService {
     Equipe createEquipe(Equipe equipe);
 
     // Delete an Equipe by ID
-    void deleteEquipe(Integer id);
+    void deleteEquipe(Long id);
 }
