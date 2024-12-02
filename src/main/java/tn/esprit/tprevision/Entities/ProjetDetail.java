@@ -27,4 +27,5 @@ public class ProjetDetail {
     @ToString.Exclude
     @JsonIgnore
     private Projet projet;
+
 }
